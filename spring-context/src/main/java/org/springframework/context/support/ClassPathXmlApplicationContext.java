@@ -76,6 +76,7 @@ public class ClassPathXmlApplicationContext extends AbstractXmlApplicationContex
 	}
 
 	/**
+	 * 创建ClassPathXmlApplicationContext，从给定的 xml 文件中加载 定义，并自动刷新上下文
 	 * Create a new ClassPathXmlApplicationContext, loading the definitions
 	 * from the given XML file and automatically refreshing the context.
 	 * @param configLocation resource location
@@ -124,6 +125,15 @@ public class ClassPathXmlApplicationContext extends AbstractXmlApplicationContex
 	}
 
 	/**
+	 * 通过给定的父级应用上下文（可null）创建ClassPathXmlApplicationContext
+	 * 通过给定的xml 文件 加载定义，
+	 * 可以设置自动刷新上下文，这样会加载所有bean的定义，并创建所有单例
+	 * 或者作为另一种选择，可以设置不自动刷新，而是在进一步配置上下文之后进行手动的刷新
+	 * 执行方法：
+	 * 1、调用父类构造方法
+	 * 2、setConfigLocations 设置配置文件路径
+	 * 3、按需调用 刷新
+	 *
 	 * Create a new ClassPathXmlApplicationContext with the given parent,
 	 * loading the definitions from the given XML files.
 	 * @param configLocations array of resource locations
